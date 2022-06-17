@@ -15,7 +15,7 @@ mongoose.connect('mongodb://progman:kan20190215@35.161.146.18:27017/remedy-db', 
 }).then(() => console.log('MongoDB connected...'))
 .catch(error => console.log(error));
 
-app.get('/', (req, res)=>{
+app.get('/', async(req, res)=>{
     const users = await User.find({});
     try {
         return res.status(200).json(users)
